@@ -1,0 +1,142 @@
+<!---Initialize Home Page--->
+<!doctype html>
+<html lang="en">
+<style>
+  .top {
+    margin: 45px auto;
+  }
+  .box {
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 120%;
+    margin: 0 auto 100px;
+    background: #fff;
+    padding-bottom: 50px;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body style="background-color: #ededed">
+  <div class="top"></div>
+  <div class="box">
+    <div class="py-4 text-center border-bottom" style="background-color:rgba(186,215,245,0.8);">
+      <img src="static/car.png" alt="" width="72" height="57">
+      <h2 style="color:rgb(53,68,68)">Car Price Predictor</h2>
+      <p class="lead">Team 6</p>
+    </div>
+    <nav class="navbar bg-body-tertiary">
+    </nav>
+    <div class="row justify-content-md-center">
+      <form class="col-auto col-5 needs-validation" action="{{ url_for('estimate') }}" method="post">
+        <div class=" row g-3">
+          <div class="col-12">
+            <label for="inputManufactuer" class="form-label">Manufactuer</label>
+            <select id="inputManufactuer" class="form-select" name="inputManufactuer" required>
+              <option>audi</option>
+              <option>bmw</option>
+              <option>chevrolet</option>
+              <option>ford</option>
+              <option>honda</option>
+              <option>lexus</option>
+              <option>mazda</option>
+              <option>mercedes-benz</option>
+              <option>mini</option>
+              <option>toyota</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="inputModel" class="form-label">Model</label>
+            <select id="inputModel" class="form-select" name="inputModel" required>
+              <option>silverado 1500</option>
+              <option>tacoma</option>
+              <option>a5</option>
+              <option>colorado</option>
+              <option>odyssey</option>
+              <option>civic</option>
+              <option>nx</option>
+              <option>rx</option>
+              <option>x5</option>
+              <option>320</option>
+              <option>q5</option>
+              <option>c300</option>
+              <option>countryman</option>
+              <option>camery</option>
+              <option>mazda3</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="inputYear" class="form-label">Year</label>
+            <input type="text" class="form-control" id="inputYear" name="inputYear" required>
+          </div>
+          <div class="col-12">
+            <label for="inputDrive" class="form-label">Drive</label>
+            <select id="inputDrive" class="form-select" name="inputDrive" required>
+              <option>4wd</option>
+              <option>fwd</option>
+              <option>rwd</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="inputOdometer" class="form-label">Odometer</label>
+            <input type="text" class="form-control" id="inputOdometer" name="inputOdometer" placeholder="How many miles you drived?" required>
+          </div>
+          <div class="col-12">
+            <label for="inputFuel" class="form-label">Fuel</label>
+            <select id="inputFuel" class="form-select" name="inputFuel" required>
+              <option>diesel</option>
+              <option>electric</option>
+              <option>gas</option>
+              <option>hybrid</option>
+            </select>
+          </div>
+          <button type="submit" class="col-12 btn btn-primary" style="color:rgba(186,215,245,0.8)">Estimate</button>
+        </div>
+      </form>
+      <div class="col-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your Car Price</span>
+        </h4>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Manufactuer</span>
+            <span>{{ inputManufactuer }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">            
+            <span>Model</span>
+            <span>{{ inputModel }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Year</span>
+            <span>{{ inputYear }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Condition</span>
+            <span>{{ inputDrive }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Odometer</span>
+            <span>{{ inputOdometer }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Cylinder</span>
+            <span>{{ inputFuel }}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <strong>Total (USD)</strong>
+            <strong>${{ price }}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
