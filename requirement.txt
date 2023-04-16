@@ -1,9 +1,0 @@
-numpy
-StandardScaler
-normalize
-Flask
-pandas
-pickle
-render_template
-request
-jsonify
