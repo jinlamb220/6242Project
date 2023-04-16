@@ -2,6 +2,3 @@ numpy
 StandardScaler
 Flask
 pandas
-pickle
-render_template
-request
