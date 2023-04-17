@@ -8,7 +8,7 @@ import pandas as pd
 import pickle 
 from joblib import load
 import bz2
-import lightgbm
+#import lightgbm
 model_d = {'silverado 1500':24761, 'tacoma':26359,  'a5':7614, 'colorado': 10995, 'odyssey': 20912, 'civic': 10586, 'nx': 20868, 'rx': 23321, 'x5': 28932, '320': 2614, 'q5': 22140, 'c300': 9548, 'countryman': 11509, 'camry': 9803, 'mazda3': 19809}
 manufactuer_d = {'audi': 3, 'bmw': 4, 'chevrolet': 7, 'ford': 13,  'honda': 16, 'lexus': 23, 'mazda': 25, 'mercedes-benz': 26, 'mini': 28, 'toyota': 40}
 drive_d = {'4wd': 0, 'fwd': 1, 'nan': 2, 'rwd': 3}
