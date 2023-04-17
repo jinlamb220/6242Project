@@ -19,10 +19,10 @@ fuel_d = {'diesel': 0, 'electric': 1, 'gas': 2, 'hybrid': 3, 'nan': 4, 'other': 
 app = Flask(__name__, template_folder='', static_folder='static')
 
 #Open our model 
-ifile = bz2.BZ2File("lgbm_reg_binary",'rb')
-model = pickle.load(ifile)
-ifile.close()
-# model = pickle.load(open('voting_model.pkl','rb'))
+#ifile = bz2.BZ2File("lgbm_reg_binary",'rb')
+#model = pickle.load(ifile)
+#ifile.close()
+model = pickle.load(open('model.pkl','rb'))
 
 #create our "home" route using the "index.html" page
 @app.route('/', methods = ['GET'])
